@@ -1,8 +1,5 @@
 const books = require("../../books");
-<<<<<<< HEAD
 const Book = require("../../models/Book");
-=======
->>>>>>> 3659076c05ec93fae8c93046085720f8151a9aa3
 
 exports.listBooks = (req, res) => {
   const name = req.query.name;
@@ -27,7 +24,6 @@ exports.bookDetail = (req, res) => {
   }
 };
 
-<<<<<<< HEAD
 exports.createBook = async (req, res) => {
   const book = new Book(req.body);
   const newBook = await book.save();
@@ -42,34 +38,6 @@ exports.updateBook = async (req, res) => {
     res.status(204).end();
   } catch (error) {
     res.status(500).json({ message: error.message });
-=======
-const createNewBook = (newBookData) => {
-  console.log("Creating New Book", newBookData);
-  const newId = books.length + 1;
-  const newBook = Object.assign({ id: newId }, newBookData);
-  console.log("My new book is: ", newBook);
-  return newBook;
-};
-
-exports.createBook = (req, res) => {
-  const newBook = createNewBook(req.body);
-  res.status(201).json(newBook);
-};
-
-const updateBook = (currentBook, newData) => {
-  const myUpdatedBook = Object.assign(currentBook, newData);
-  return myUpdatedBook;
-};
-
-exports.updateBook = (req, res) => {
-  const { bookId } = req.params;
-  const book = books.find((book) => book.id === bookId);
-  if (book) {
-    const updatedBook = updateBook(book, req.body);
-    res.status(200).json(updatedBook);
-  } else {
-    res.status(404).json();
->>>>>>> 3659076c05ec93fae8c93046085720f8151a9aa3
   }
 };
 
