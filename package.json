@@ -11,8 +11,12 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+<<<<<<< HEAD
     "express": "^4.21.1",
     "mongoose": "^8.8.4",
     "multer": "^1.4.5-lts.1"
+=======
+    "express": "^4.21.1"
+>>>>>>> 3659076c05ec93fae8c93046085720f8151a9aa3
   }
 }
